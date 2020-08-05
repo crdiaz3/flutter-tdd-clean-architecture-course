@@ -5,9 +5,11 @@ The purpose of this repo is to develop best-practices for integration testing fo
 ## Running Integration Tests
 A script is located at the project's root that runs all test files located within the *test_driver* folder.
 
-Execute the following command in your terminal from the root of the project:
+Execute the following command in your terminal from the root of the project passing the name of the devices to test against:
+
+*Example Call*
 ~~~~
-./integration_tests.sh
+./integration_tests.sh "iPhone SE (2nd generation)" "sdk gphone x86 arm"
 ~~~~
 
 ##  Integration Tests Architecture
@@ -77,7 +79,7 @@ void  main() async {
 	var command = DriverHelper.getDriverCommand(commandString);
     switch (command) {
       case  DriverCommand.restart:
-        app.main(key: UniqueKey());
+        app.main();
         return  'success';
       break;
       default:
@@ -90,6 +92,9 @@ void  main() async {
   app.main()
 }
 ~~~~
+
+### Running Concurrent Tests
+As of now, Flutter Driver does not support running integration tests concurrently, so we are stuck running against one device at a time.
 
 ## Mocking
 The goal is to provide the ability to easily specify whether mocked or actual services are to be used when executing integration tests. Also, when mocking, to utilize Mockito to simplify mocking of various services and dependencies.
