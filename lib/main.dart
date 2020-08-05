@@ -6,7 +6,7 @@ import 'mock/driver_command.dart';
 
 enum Environment { prod, mock }
 
-/// [EnvironmentType] is to determine which dependencies are to be initialized: actual vs mocked
+/// [Environment] is to determine which dependencies are to be initialized: actual vs mocked
 /// [DriverCommand] determines how and which service calls will be mocked when running the mock environment
 Future<void> main({
   Environment environment = Environment.prod,

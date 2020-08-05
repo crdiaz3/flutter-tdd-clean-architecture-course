@@ -2,9 +2,7 @@
 import 'package:clean_architecture_tdd_course/features/number_trivia/presentation/pages/number_trivia_page_keys.dart';
 import 'package:clean_architecture_tdd_course/mock/driver_command.dart';
 import 'package:flutter_driver/flutter_driver.dart';
-// import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-// import 'package:http/http.dart' as http;
 
 import '../../helpers/driver_extensions.dart';
 

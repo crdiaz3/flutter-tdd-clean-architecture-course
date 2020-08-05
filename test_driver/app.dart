@@ -8,8 +8,8 @@ import 'package:flutter_driver/driver_extension.dart';
 void main() async {
   Future<String> dataHandler(String commandString) async {
     var command = DriverHelper.getDriverCommand(commandString);
-    app.main(
-      environment: app.EnvironmentType.mock,
+    await app.main(
+      environment: app.Environment.prod,
       command: command,
     );
     return 'complete';
@@ -20,5 +20,5 @@ void main() async {
 
   // Initialize dependencies specifying the environment.
   // environemtn is used to determine which services to be injected.
-  app.main(environment: app.EnvironmentType.mock);
+  await app.main(environment: app.Environment.prod);
 }
